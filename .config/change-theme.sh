@@ -35,6 +35,6 @@ else
   echo '[-] failed to set up rofi'
 fi
 
+xrdb ~/.Xresources
 feh --bg-fill ~/.config/themes/$THEME/.wall/w1.jpg
-
 i3-msg restart

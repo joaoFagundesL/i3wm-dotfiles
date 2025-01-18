@@ -1,13 +1,14 @@
 [general]
 import = [
-    "~/.config/alacritty/themes/themes/catppuccin_macchiato.toml"
+    "~/.config/alacritty/themes/themes/rose_pine.toml"
 ]
 
 [font]
-normal.family = "JetBrains Mono Nerd Font"
-bold.family = "JetBrains Mono Nerd Font"
-italic.family = "JetBrains Mono Nerd Font"
-bold_italic.family = "JetBrains Mono Nerd Font"
+size = 14.0
+normal.family = "Terminus"
+bold.family = "Terminus"
+italic.family = "Terminus"
+bold_italic.family = "Terminus"
 
 [window]
 opacity = 0.8

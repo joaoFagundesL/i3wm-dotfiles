@@ -1,0 +1,14 @@
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/rose_pine.toml"
+]
+
+[font]
+size = 14.0
+normal.family = "Terminus"
+bold.family = "Terminus"
+italic.family = "Terminus"
+bold_italic.family = "Terminus"
+
+[window]
+opacity = 0.8
