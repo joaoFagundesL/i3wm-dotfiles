@@ -4,6 +4,8 @@ xterm*saveLines:    35000
 xterm*faceName: Monospace
 xterm*faceSize: 14
 
+*theme: catppuccin-macchiato
+
 *background: #24273a
 *foreground: #cad3f5
 *cursorColor: #f4dbd6

@@ -82,6 +82,8 @@ bindsym $mod+q kill
 # start rofi (a program launcher)
 bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+Shift+e exec --no-startup-id rofi -show power-menu -modi power-menu:~/.config/rofi/rofi-power-menu
+bindsym $mod+t exec --no-startup-id ~/.config/rofi-change-theme.sh
+bindsym $mod+Shift+w exec --no-startup-id ~/.config/change-wall.sh
 # A more modern dmenu replacement is rofi:
 # bindsym $mod+d exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
