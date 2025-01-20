@@ -61,10 +61,10 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
-set $up l
-set $down k
-set $left j
-set $right semicolon
+set $up k
+set $down j
+set $left h
+set $right l
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -75,6 +75,9 @@ tiling_drag modifier titlebar
 
 # start a terminal
 bindsym $mod+Return exec alacritty
+
+bindsym $mod+Shift+Return exec --no-startup-id alacritty --class=floating
+for_window [class="^floating$"] floating enable
 
 # kill focused window
 bindsym $mod+q kill
@@ -115,7 +118,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+Shift+g split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -237,7 +240,6 @@ bindsym $mod+r mode "resize"
 #   }
 # }
 #
-
 set $base           #191724
 set $surface        #1f1d2e
 set $overlay        #26233a
@@ -256,9 +258,10 @@ set $highlighthigh  #524f67
 
 # Teming border and Windows --------------
 # target                 title     bg    text   indicator  border
-client.focused           $rose     $base $text  $rose      $rose
-client.focused_inactive  $text     $base $text  $subtle    $surface
-client.unfocused         $text     $base $text  $overlay   $overlay
-client.urgent            $text     $base $text  $love      $love
+client.focused #689d6a #689d6a #282828 #282828
+client.focused_inactive #1d2021 #1d2021 #928374 #282828
+client.unfocused #32302f #32302f #928374 #282828
+client.urgent #cc241d #cc241d #ebdbb2 #282828
 client.placeholder       $base     $base $text  $overlay   $overlay
 client.background        $base
+

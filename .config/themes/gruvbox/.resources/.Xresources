@@ -1,0 +1,7 @@
+xterm*background:    black
+xterm*foreground:    grey
+xterm*saveLines:    35000
+xterm*faceName: Monospace
+xterm*faceSize: 14
+
+*theme: gruvbox

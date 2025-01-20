@@ -1,6 +1,11 @@
-@import "default"
-configuration {
-    font:				"Terminus 12";
+/**
+ * Gruvbox Material Rofi theme
+ * Color palette copied from https://github.com/sainnhe/gruvbox-material
+ * https://github.com/hiimsergey/rofi-gruvbox-material
+ */
+
+ configuration {
+    font:				"FiraCode Nerd Font 12";
     show-icons:				true;
     icon-theme:				"Arc-X-D";
     display-drun:			"Apps:";
@@ -8,143 +13,107 @@ configuration {
     scroll-method:			0;
     disable-history:			false;
     sidebar-mode:			false;
-}
+ }
 
 * {
-	bg: #19172470;
-	cur: #1f1d2e;
-	fgd: #e0def4;
-	cmt: #6e6a86;
-	cya: #9ccfd8;
-	grn: #31748f;
-	ora: #ebbcba;
-	pur: #c4a7e7;
-	red: #eb6f92;
-	yel: #f6c177;
+    // Taken from "Hard" variant
+    background: #282828;  // bg_statusline1
+    element: #32302f;     // bg_statusline2
+    selection: #a89984;   // grey2
+    text: #eee0b7;        // bg4 (light mode)
 
-	font: "Terminus 12";
+    red: #ea6962;         // red
+    yellow: #d8a657;      // yellow
+    reddark: #c14a4a;     // red (light mode)
+    yellowdark: #b47109;  // yellow (light mode)
 
-	foreground: @fgd;
-	background: @bg;
-	active-background: @grn;
-	urgent-background: @red;
-
-	selected-background: @active-background;
-	selected-urgent-background: @urgent-background;
-	selected-active-background: @active-background;
-	separatorcolor: @active-background;
-	bordercolor: @ora;
+    background-color:  transparent;
 }
 
-element-icon {
-    size: 25px;
+window {
+    height: 600;
+    width: 600;
+
+    border-radius: 10;
 }
 
+mainbox {
+    spacing: 0;
+    children: [inputbar, message, listview];
+}
 
-#window {
-	background-color: @background;
-	border:           3;
-	border-radius:    6;
-	border-color:     @bordercolor;
-	padding:          5;
+inputbar {
+    color: @text;
+    padding: 14;
+    background-color: @background;
 }
-#mainbox {
-	border:  0;
-	padding: 5;
+
+message {
+    padding: 10;
+    background-color: @selection;
 }
-#message {
-	border:       1px dash 0px 0px ;
-	border-color: @separatorcolor;
-	padding:      1px ;
+
+listview {
+    padding: 8;
+    border-radius: 0 0 10 10;
+    border: 2 2 2 2;
+    border-color: @background;
+    background-color: @background;
+    dynamic: false;
 }
-#textbox {
-	text-color: @foreground;
+
+textbox {
+    text-color: @text;
 }
-#listview {
-	fixed-height: 0;
-	border:       2px dash 0px 0px ;
-	border-color: @bordercolor;
-	spacing:      2px ;
-	scrollbar:    false;
-	padding:      2px 0px 0px ;
+
+error-message {
+    border: 20 20 20 20;
 }
-#element {
-	border:  0;
-	padding: 1px ;
+
+entry, prompt, case-indicator {
+    text-color: inherit;
 }
-#element.normal.normal {
-	background-color: @background;
-	text-color:       @foreground;
+
+prompt {
+    margin: 0 10 0 0;
 }
-#element.normal.urgent {
-	background-color: @urgent-background;
-	text-color:       @urgent-foreground;
+
+element {
+    padding: 5;
+    vertical-align: 0.5;
+    border-radius: 10;
+    text-color: @text;
+    background-color: @element;
 }
-#element.normal.active {
-	background-color: @active-background;
-	text-color:       @background;
+
+element.selected.normal {
+    background-color: @selection;
 }
-#element.selected.normal {
-	background-color: @selected-background;
-	text-color:       @foreground;
+
+element.alternate.normal {
+    background-color: inherit;
 }
-#element.selected.urgent {
-	background-color: @selected-urgent-background;
-	text-color:       @foreground;
+
+element.normal.active, element.alternate.active {
+    background-color: @yellow;
 }
-#element.selected.active {
-	background-color: @selected-active-background;
-	text-color:       @background;
+
+element.selected.active {
+    background-color: @yellowdark;
 }
-#element.alternate.normal {
-	background-color: @background;
-	text-color:       @foreground;
+
+element.normal.urgent, element.alternate.urgent {
+    background-color: @red;
 }
-#element.alternate.urgent {
-	background-color: @urgent-background;
-	text-color:       @foreground;
+
+element.selected.urgent {
+    background-color: @reddark;
 }
-#element.alternate.active {
-	background-color: @active-background;
-	text-color:       @foreground;
-}
-#scrollbar {
-	width:        2px ;
-	border:       0;
-	handle-width: 8px ;
-	padding:      0;
-}
-#sidebar {
-	border:       2px dash 0px 0px ;
-	border-color: @separatorcolor;
-}
-#button.selected {
-	background-color: @selected-background;
-	text-color:       @foreground;
-}
-#inputbar {
-	spacing:    0;
-	text-color: @foreground;
-	padding:    1px ;
-}
-#case-indicator {
-	spacing:    0;
-	text-color: @foreground;
-}
-#entry {
-	spacing:    0;
-	text-color: @cya;
-}
-#prompt {
-	spacing:    0;
-	text-color: @grn;
-}
-#inputbar {
-	children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
-}
-#textbox-prompt-colon {
-	expand:     false;
-	str:        ":";
-	margin:     0px 0.3em 0em 0em;
-	text-color: @grn;
+
+element-text, element-icon {
+    size: 40;
+    margin: 0 10 0 0;
+    vertical-align: 0.5;
+    background-color: inherit;
+    text-color: @text;
 }
