@@ -90,6 +90,7 @@ source $ZSH/oh-my-zsh.sh
 # fi
 
 xset r rate 200 60
+pfetch
 
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"

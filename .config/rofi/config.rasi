@@ -5,7 +5,7 @@
  */
 
  configuration {
-    font:				"FiraCode Nerd Font 12";
+    font:				"DM Mono 12";
     show-icons:				true;
     icon-theme:				"Arc-X-D";
     display-drun:			"Apps:";
