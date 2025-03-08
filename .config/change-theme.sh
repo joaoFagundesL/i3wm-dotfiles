@@ -36,5 +36,5 @@ else
 fi
 
 xrdb ~/.Xresources
-feh --bg-fill ~/.config/themes/$THEME/.wall/w1.jpg
+feh --bg-scale ~/.config/themes/$THEME/.wall/w1.jpg
 i3-msg restart

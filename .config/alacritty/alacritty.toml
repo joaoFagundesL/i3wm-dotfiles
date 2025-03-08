@@ -4,11 +4,11 @@ import = [
 ]
 
 [font]
-size = 12.0
+size = 10.0
 normal.family = "DM Mono"
 bold.family = "DM Mono"
 italic.family = "DM Mono"
 bold_italic.family = "DM Mono"
 
 [window]
-opacity = 1
+opacity = 0.6

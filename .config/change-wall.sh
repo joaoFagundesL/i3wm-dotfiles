@@ -6,4 +6,4 @@ selected=$(for a in "$dir"/*;
     echo -en "$(basename "$a")\0icon\x1f$a\n"
   done | rofi -dmenu -p "Wall")
 
-feh --bg-fill "$dir"/"$selected"
+feh --bg-scale "$dir"/"$selected"
